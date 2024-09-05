@@ -14,15 +14,15 @@ CONFIG_SHELL='/nix/store/4bj2kxdm1462fzcc2i2s4dn33g2angcc-bash-5.2p32/bin/bash'
 export CONFIG_SHELL
 CXX='g++'
 export CXX
-DEVENV_DOTFILE='/home/mihranmashhud/Documents/Coding/mihranmashhud.github.io/.devenv'
+DEVENV_DOTFILE='/home/mihranmashhud/Documents/Coding/personal-site/.devenv'
 export DEVENV_DOTFILE
 DEVENV_PROFILE='/nix/store/06a9bjnin0fpf8y89kab1njlwmhdwb7h-devenv-profile'
 export DEVENV_PROFILE
-DEVENV_ROOT='/home/mihranmashhud/Documents/Coding/mihranmashhud.github.io'
+DEVENV_ROOT='/home/mihranmashhud/Documents/Coding/personal-site'
 export DEVENV_ROOT
-DEVENV_RUNTIME='/run/user/1000/devenv-540577d'
+DEVENV_RUNTIME='/run/user/1000/devenv-290c809'
 export DEVENV_RUNTIME
-DEVENV_STATE='/home/mihranmashhud/Documents/Coding/mihranmashhud.github.io/.devenv/state'
+DEVENV_STATE='/home/mihranmashhud/Documents/Coding/personal-site/.devenv/state'
 export DEVENV_STATE
 HOSTTYPE='x86_64'
 HOST_PATH='/nix/store/w1iq3315z63558j04gnlzdd2yk1v1hfz-coreutils-9.5/bin:/nix/store/ajymwgc23snyw48wvkapw4qjggsi2vbw-findutils-4.10.0/bin:/nix/store/frx30r9405q0d4jfxnf969mgq4q8rjk2-diffutils-3.10/bin:/nix/store/d58flzaagmfb5pyvmknly4cnws45nc80-gnused-4.9/bin:/nix/store/7adzfq6lz76h928gmws5sn6nkli14ml6-gnugrep-3.11/bin:/nix/store/wab5wlc7rrn58z6ay4ls42av4n8rlqia-gawk-5.2.2/bin:/nix/store/k11rxbj9mvpgfk15rriqjn97by18r2xk-gnutar-1.35/bin:/nix/store/ybpxfq146szbqv8xxlc7ixnj9k6l1y5d-gzip-1.13/bin:/nix/store/07lm36zpghw8i9spwbcgkwzisw22k1kn-bzip2-1.0.8-bin/bin:/nix/store/nkza13k6khbmm7z2j6vj40k7081w6c9q-gnumake-4.4.1/bin:/nix/store/4bj2kxdm1462fzcc2i2s4dn33g2angcc-bash-5.2p32/bin:/nix/store/rr31bwb0jym6mgspqp54wdydr94skqvc-patch-2.7.6/bin:/nix/store/1idcyg3ldcggjzfznb5klr7b2wa1vznf-xz-5.6.2-bin/bin:/nix/store/2cqhdkxl71p1afk02g34hm3mbzwb8h1a-file-5.45/bin'
@@ -45,13 +45,13 @@ NIX_CC='/nix/store/lbk30k56awz9vz9qpid93fkjns0xwlhd-gcc-wrapper-13.3.0'
 export NIX_CC
 NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu='1'
 export NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-NIX_CFLAGS_COMPILE=' -frandom-seed=zpb9c0vffn -isystem /nix/store/ypcn728wnqblyapkdix3hywdy574xd22-nodejs-slim-20.15.1/include -isystem /nix/store/ypcn728wnqblyapkdix3hywdy574xd22-nodejs-slim-20.15.1/include'
+NIX_CFLAGS_COMPILE=' -frandom-seed=8425dr8x6z -isystem /nix/store/ypcn728wnqblyapkdix3hywdy574xd22-nodejs-slim-20.15.1/include -isystem /nix/store/ypcn728wnqblyapkdix3hywdy574xd22-nodejs-slim-20.15.1/include'
 export NIX_CFLAGS_COMPILE
 NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
 NIX_HARDENING_ENABLE='bindnow format fortify fortify3 pic relro stackprotector strictoverflow zerocallusedregs'
 export NIX_HARDENING_ENABLE
-NIX_LDFLAGS='-rpath /home/mihranmashhud/Documents/Coding/mihranmashhud.github.io/outputs/out/lib '
+NIX_LDFLAGS='-rpath /home/mihranmashhud/Documents/Coding/personal-site/outputs/out/lib '
 export NIX_LDFLAGS
 NIX_NO_SELF_RPATH='1'
 NIX_PKG_CONFIG_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu='1'
@@ -148,7 +148,7 @@ name='devenv-shell-env'
 export name
 nativeBuildInputs='/nix/store/z1a0wb285s8vcphf9g7z52vb4xfwsfp5-typescript-5.5.4 /nix/store/ypcn728wnqblyapkdix3hywdy574xd22-nodejs-slim-20.15.1 /nix/store/rq6s344bdlg0i6p99w6y8b58crgvdnhs-pnpm-9.7.0 /nix/store/8dx0xja2r6g7q32c458gwvv70y3m7sns-dev /nix/store/hag7yzp8g31hls1281fcy6fn848h5jkq-devenv /nix/store/blb1ci2nwrmgzb3g1xl4mvqpwkhm3s3b-pkg-config-wrapper-0.29.2'
 export nativeBuildInputs
-out='/home/mihranmashhud/Documents/Coding/mihranmashhud.github.io/outputs/out'
+out='/home/mihranmashhud/Documents/Coding/personal-site/outputs/out'
 export out
 outputBin='out'
 outputDev='out'
@@ -179,7 +179,7 @@ preConfigurePhases=' updateAutotoolsGnuConfigScriptsPhase'
 declare -a preFixupHooks=('_moveToShare' '_multioutDocs' '_multioutDevs' )
 preferLocalBuild='1'
 export preferLocalBuild
-prefix='/home/mihranmashhud/Documents/Coding/mihranmashhud.github.io/outputs/out'
+prefix='/home/mihranmashhud/Documents/Coding/personal-site/outputs/out'
 declare -a propagatedBuildDepFiles=('propagated-build-build-deps' 'propagated-native-build-inputs' 'propagated-build-target-deps' )
 propagatedBuildInputs=''
 export propagatedBuildInputs
@@ -220,8 +220,8 @@ then
 fi
 unset HOST_PATH NIX_BUILD_CORES __structuredAttrs buildInputs buildPhase builder depsBuildBuild depsBuildBuildPropagated depsBuildTarget depsBuildTargetPropagated depsHostHost depsHostHostPropagated depsTargetTarget depsTargetTargetPropagated dontAddDisableDepTrack doCheck doInstallCheck nativeBuildInputs out outputs patches phases preferLocalBuild propagatedBuildInputs propagatedNativeBuildInputs shell shellHook stdenv strictDeps
 
-mkdir -p '\''/run/user/1000/devenv-540577d'\''
-ln -snf '\''/run/user/1000/devenv-540577d'\'' '\''/home/mihranmashhud/Documents/Coding/mihranmashhud.github.io/.devenv'\''/run
+mkdir -p '\''/run/user/1000/devenv-290c809'\''
+ln -snf '\''/run/user/1000/devenv-290c809'\'' '\''/home/mihranmashhud/Documents/Coding/personal-site/.devenv'\''/run
 
 '
 export shellHook
