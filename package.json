@@ -1,34 +1,34 @@
 {
-	"name": "mihranmashhud.github.io",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"lint": "prettier --check .",
-		"format": "prettier --write ."
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/adapter-cloudflare": "^4.7.2",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
-		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.41",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"svelte": "^5.0.0-next.1",
-		"svelte-check": "^3.6.0",
-		"tailwindcss": "^3.4.10",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.3",
-		"wrangler": "^3.74.0"
-	},
-	"type": "module",
-	"dependencies": {
-		"gsap": "^3.12.5"
-	}
+  "name": "mihranmashhud.github.io",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^3.2.4",
+    "@sveltejs/adapter-cloudflare": "1.0.0-next.45",
+    "@sveltejs/kit": "^2.5.26",
+    "@sveltejs/vite-plugin-svelte": "4.0.0-next.7",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.45",
+    "prettier": "^3.3.3",
+    "prettier-plugin-svelte": "^3.2.6",
+    "svelte": "5.0.0-next.243",
+    "svelte-check": "^3.8.6",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3",
+    "wrangler": "^3.74.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "gsap": "^3.12.5"
+  }
 }
