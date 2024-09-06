@@ -29,6 +29,7 @@
 
     const title_tl = gsap.timeline()
     title_tl.from(title, {
+      delay: 1,
       duration: 1,
       opacity: 0,
       y: "2rem",
