@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<svg xml:space="preserve" viewBox="0 0 258.933 46.213">
+<svg xml:space="preserve" viewBox="0 0 260 46.213">
   <path d="M28.823 0 20.28 46.213h15.772L44.595 0z" />
   <path d="M8.541 0 0 46.213h15.772L24.313 0z" />
   <path d="m69.385 0-8.54 46.213h15.77L85.158 0Z" />
