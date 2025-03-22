@@ -12,6 +12,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>Mihran Mashhud</title>
+</svelte:head>
+
 <div class="text-white">
 {@render children()}
 </div>
