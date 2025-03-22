@@ -1,6 +1,6 @@
 {
-  "name": "mihranmashhud.github.io",
-  "version": "0.0.1",
+  "name": "mihranmashhud.dev",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -29,6 +29,7 @@
   },
   "type": "module",
   "dependencies": {
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "runed": "^0.25.0"
   }
 }
