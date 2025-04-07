@@ -68,7 +68,7 @@
         <div class="flex logo-row-{i} gap-1 py-1 w-[900vw] md:w-[300vw]">
           {#each Array(elems) as j}
             <div class="flex-1">
-              <MihranLogo id="logo-{i}-{j}" --fill="" --stroke="oklch(0.372 0.044 257.287)" />
+              <MihranLogo --fill="oklch(0.21 0.006 285.885)" --stroke="none" />
             </div>
           {/each}
         </div>
@@ -92,7 +92,7 @@
 
   .logo-marquee-container {
     position: absolute;
-    rotate: -10deg;
-    transform: translateY(-25%);
+    /* rotate: -10deg; */
+    /* transform: translateY(-25%); */
   }
 </style>

@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@hypernym/svelte-markdown": "^0.6.0",
     "@sveltejs/adapter-auto": "^3.2.4",
     "@sveltejs/adapter-cloudflare": "6.0.1",
     "@sveltejs/kit": "^2.5.27",
@@ -30,6 +31,7 @@
   "type": "module",
   "dependencies": {
     "gsap": "^3.12.5",
+    "remixicon": "^4.6.0",
     "runed": "^0.25.0"
   }
 }
