@@ -107,7 +107,7 @@
     version="1.1"
     id="loading-svg"
     viewBox="0 0 {viewBox.w} {viewBox.h}"
-    class="max-w-5xl drop-shadow-md drop-shadow-white"
+    class="max-w-5xl drop-shadow-2xl"
   >
     <mask id="loading-svg-mask" class="fill-white mask-type-alpha">
       <!-- M -->
