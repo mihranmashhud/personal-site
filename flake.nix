@@ -53,7 +53,7 @@
                 dev.exec =
                   # bash
                   ''
-                    pnpm run dev
+                    pnpm run dev $@
                   '';
               };
             }

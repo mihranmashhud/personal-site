@@ -1,15 +1,17 @@
 <script lang="ts">
   import '../app.css';
   import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-  import { Flip } from 'gsap/dist/Flip';
-  import { TextPlugin } from 'gsap/dist/TextPlugin';
-  import "remixicon/fonts/remixicon.css";
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { Flip } from 'gsap/Flip';
+  import { TextPlugin } from 'gsap/TextPlugin';
+  import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
+
+  import 'remixicon/fonts/remixicon.css';
 
   let { children } = $props();
 
   $effect(() => {
-    gsap.registerPlugin(ScrollTrigger, Flip, TextPlugin);
+    gsap.registerPlugin(ScrollTrigger, Flip, TextPlugin, MorphSVGPlugin);
   });
 </script>
 
@@ -17,6 +19,6 @@
   <title>Mihran Mashhud</title>
 </svelte:head>
 
-<div class="text-white">
-{@render children()}
-</div>
+<main class="text-white">
+  {@render children()}
+</main>

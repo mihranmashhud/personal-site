@@ -12,25 +12,26 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@hypernym/svelte-markdown": "^0.6.0",
-    "@sveltejs/adapter-auto": "^3.2.4",
+    "@sveltejs/adapter-auto": "^3.3.1",
     "@sveltejs/adapter-cloudflare": "6.0.1",
-    "@sveltejs/kit": "^2.5.27",
-    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@sveltejs/kit": "^2.49.0",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
     "@tailwindcss/postcss": "^4.0.12",
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.6",
-    "svelte": "^5.25.2",
+    "prettier-plugin-svelte": "^3.4.0",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "svelte": "^5.43.14",
     "svelte-check": "^4.1.5",
-    "tailwindcss": "^4.0.12",
+    "tailwindcss": "^4.1.17",
     "typescript": "^5.5.4",
     "vite": "^6.2.2",
     "wrangler": "^4.4.0"
   },
   "type": "module",
   "dependencies": {
-    "gsap": "^3.12.5",
+    "animejs": "^4.2.2",
+    "gsap": "^3.13.0",
     "remixicon": "^4.6.0",
     "runed": "^0.25.0"
   }

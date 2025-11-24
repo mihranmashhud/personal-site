@@ -21,7 +21,7 @@
 
         text
 
-        {#snippet story()}
+        {#snippet description()}
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -48,7 +48,7 @@
 
         text
 
-        {#snippet story()}
+        {#snippet description()}
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -77,7 +77,7 @@
         longer to get rolling but there is also a lot more projects to hop on. In fact, that's
         exactly what I did.
 
-        {#snippet story()}
+        {#snippet description()}
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -106,7 +106,7 @@
         <i>This small company has how many products?</i> Time to upgrade my React game! Glad to say
         that my level of polish came through. Almost too well.
 
-        {#snippet story()}
+        {#snippet description()}
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -135,7 +135,7 @@
         First ever co-op and I'm already thrown into the deep end learning SQL and Django in the
         span of 3 days. Not to mention recent migration issues. Really had my work cut out for me.
 
-        {#snippet story()}
+        {#snippet description()}
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

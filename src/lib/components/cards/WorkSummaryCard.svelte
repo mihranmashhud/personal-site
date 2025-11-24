@@ -13,7 +13,7 @@
     start,
     end,
     stack,
-    story,
+    description,
     children,
     dialogOverride = false
   }: {
@@ -23,7 +23,7 @@
     start: string,
     end: string,
     stack: string[],
-    story?: Snippet,
+    description?: Snippet,
     children?: Snippet,
     dialogOverride?: boolean,
   } = $props();
@@ -41,7 +41,7 @@
 <div class="max-w-2xl">
   <Card
     onclick={() => {
-      if (story) {
+      if (description) {
         pushState('', {
           [key]: true
         });
@@ -60,13 +60,13 @@
       {/each}
     </div>
     {@render children?.()}
-    {#if story}
+    {#if description}
       <p class="mt-6 text-cyan-400">Read more</p>
     {/if}
   </Card>
 </div>
 
-{#if story && (showDialog || dialogOverride)}
+{#if description && (showDialog || dialogOverride)}
   <div
     class="overflow-x-hidden fixed inset-0 z-50 flex justify-center items-center w-full max-h-full bg-gradient-to-b from-cyan-800/50 to-violet-800/50 p-4"
     transition:fade
@@ -92,7 +92,7 @@
             {/each}
           </div>
           <div class="font-bold mt-4 mb-1 headline">Story:</div>
-          {@render story?.()}
+          {@render description?.()}
         </div>
       </Card>
     </div>
