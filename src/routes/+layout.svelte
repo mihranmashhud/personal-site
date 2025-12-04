@@ -1,24 +1,29 @@
 <script lang="ts">
   import '../app.css';
   import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import { Flip } from 'gsap/Flip';
   import { TextPlugin } from 'gsap/TextPlugin';
-  import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
+  import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 
   import 'remixicon/fonts/remixicon.css';
+  import ScrollTrigger from '$lib/components/wrappers/ScrollTrigger.svelte';
+  import { onMount } from 'svelte';
+  import PageTransition from '$lib/components/wrappers/PageTransition.svelte';
+  import Nav from '$lib/components/Nav.svelte';
 
   let { children } = $props();
 
-  $effect(() => {
-    gsap.registerPlugin(ScrollTrigger, Flip, TextPlugin, MorphSVGPlugin);
+  onMount(() => {
+    gsap.registerPlugin(Flip, TextPlugin, ScrambleTextPlugin);
   });
 </script>
 
-<svelte:head>
-  <title>Mihran Mashhud</title>
-</svelte:head>
+<Nav />
 
-<main class="text-white">
-  {@render children()}
-</main>
+<ScrollTrigger>
+  <PageTransition>
+    <main class="overflow-x-hidden text-white">
+      {@render children()}
+    </main>
+  </PageTransition>
+</ScrollTrigger>

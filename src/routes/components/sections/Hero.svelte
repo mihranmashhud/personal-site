@@ -1,12 +1,11 @@
 <script lang="ts">
-  import MihranLogo from '$lib/components/svgs/MihranLogo.svelte';
   import { gsap } from 'gsap';
-  import { range } from '$lib/utils/arrays';
+  import { onMount } from 'svelte';
+  import LogoMarquee from '$lib/components/animations/LogoMarquee.svelte';
 
-  const rows = 4;
-  const elems = 12;
-  let title: HTMLElement;
-  let subtitle: HTMLElement;
+  let section: HTMLElement | null = $state(null);
+  let title: HTMLElement | null = $state(null);
+  let subtitle: HTMLElement | null = $state(null);
   let subtitles = [
     'Web Dev Monster',
     'Com Sci Nerd',
@@ -15,17 +14,8 @@
     "Now it's NixOS"
   ];
 
-  $effect(() => {
+  function animate() {
     const tl = gsap.timeline();
-    for (let i = 0; i < rows; i++) {
-      const target = `.logo-row-${i}`;
-      gsap.to(target, {
-        x: '25%',
-        duration: 8 + (i + 1),
-        repeat: -1,
-        ease: 'none'
-      });
-    }
 
     const title_tl = gsap.timeline();
     title_tl.from(title, {
@@ -35,13 +25,16 @@
       y: '2rem'
     });
 
-    subtitles.push(subtitle.textContent as string);
+    subtitles.push(subtitle?.textContent as string);
     const subtitle_tl = gsap.timeline({
       repeat: -1
     });
     for (const elem of subtitles) {
       subtitle_tl.to(subtitle, {
-        text: elem,
+        scrambleText: {
+          text: elem,
+          chars: 'upperAndLowerCase'
+        },
         delay: 2.5,
         duration: 1
       });
@@ -56,43 +49,32 @@
       })
     );
     tl.add(subtitle_tl);
+  }
+
+  onMount(() => {
+    let mm = gsap.matchMedia();
+
+    mm.add('(prefers-reduced-motion: no-preference)', animate);
   });
 </script>
 
 <section
-  class="relative w-screen h-screen bg-zinc-950 flex justify-center items-center overflow-hidden -z-50"
+  id="greeting"
+  class="relative -z-50 flex h-screen w-screen max-w-screen items-center justify-center overflow-hidden bg-zinc-950"
+  bind:this={section}
 >
-  <div class="logo-marquee-container -z-10">
-    <div id="logo-rows">
-      {#each range(0, rows) as i}
-        <div class="flex logo-row-{i} gap-1 py-1 w-[900vw] md:w-[300vw]">
-          {#each Array(elems) as j}
-            <div class="flex-1">
-              <MihranLogo --fill="oklch(0.21 0.006 285.885)" --stroke="none" />
-            </div>
-          {/each}
-        </div>
-      {/each}
-    </div>
-  </div>
-  <div class="">
-    <h1 bind:this={title} class="p-2 font-bold tracking-tight text-6xl md:text-8xl">
+  <LogoMarquee />
+  <div class="bg-linear-to-r from-cyan-400 to-orange-400 bg-clip-text text-white/50">
+    <h1
+      bind:this={title}
+      class="text-shadow-2xl p-2 text-6xl font-bold tracking-tight drop-shadow-xl drop-shadow-zinc-950 md:text-8xl"
+    >
       Hey! I'm<br />
       Mihran<br />
       Mashhud
     </h1>
-    <h2 bind:this={subtitle} class="p-2 font-bold tracking-tight text-3xl">Full Stack Developer</h2>
+    <h2 bind:this={subtitle} class="p-2 text-xl font-bold tracking-tight md:text-3xl">
+      Full Stack Developer
+    </h2>
   </div>
 </section>
-
-<style>
-  h1 {
-    text-shadow: 0 2px 10px lab(20 0 -10);
-  }
-
-  .logo-marquee-container {
-    position: absolute;
-    /* rotate: -10deg; */
-    /* transform: translateY(-25%); */
-  }
-</style>

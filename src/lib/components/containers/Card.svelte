@@ -1,10 +1,13 @@
 <script>
-let {
-  children,
-  ...rest
-} = $props()
+  let { children, ...rest } = $props();
 </script>
 
-<div class="p-4 rounded-xl transition-all duration-300 shadow-xl shadow-zinc-800 ring-1 ring-slate-700 bg-zinc-950" {...rest}>
+<div
+  {...rest}
+  class={[
+    'p-4 shadow-lg shadow-zinc-800 outline-1 outline-stone-800',
+    rest?.class
+  ]}
+>
   {@render children?.()}
 </div>
