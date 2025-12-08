@@ -14,7 +14,7 @@ export function scrollreveal(override_vars: GSAPTweenVars = {}): Attachment {
       },
       opacity: 0,
       translateY: 10,
-      duration: 0.35
+      duration: 0.35,
     };
     const vars = Object.assign(defaults, override_vars);
 

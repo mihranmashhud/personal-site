@@ -4,7 +4,6 @@
   import LogoMarquee from '$lib/components/animations/LogoMarquee.svelte';
   import ScrollDownArrow from '$lib/components/animations/ScrollDownArrow.svelte';
 
-  let section: HTMLElement | null = $state(null);
   let title: HTMLElement | null = $state(null);
   let subtitle: HTMLElement | null = $state(null);
   let subtitles = [
@@ -61,14 +60,13 @@
 
 <section
   id="greeting"
-  class="relative -z-50 flex h-screen w-screen max-w-screen items-center justify-center overflow-hidden bg-zinc-950"
-  bind:this={section}
+  class="relative -z-50 flex h-screen w-screen max-w-screen items-center justify-center overflow-hidden bg-zinc-50 dark:bg-zinc-950"
 >
   <LogoMarquee />
-  <div class="bg-linear-to-r from-cyan-400 to-orange-400 bg-clip-text text-white/50">
+  <div>
     <h1
       bind:this={title}
-      class="text-shadow-2xl p-2 text-6xl font-bold tracking-tight drop-shadow-xl drop-shadow-zinc-950 md:text-8xl"
+      class="text-shadow-2xl headline-gradient p-2 text-6xl font-bold tracking-tight drop-shadow-xl drop-shadow-black/50 md:text-8xl dark:drop-shadow-white/30"
     >
       Hey! I'm<br />
       Mihran<br />

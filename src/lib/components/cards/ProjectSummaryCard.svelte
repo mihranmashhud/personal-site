@@ -2,12 +2,12 @@
   import type { Snippet } from 'svelte';
   import Card from '../containers/Card.svelte';
   import { scrollreveal } from '$lib/animate/attachments.svelte';
+  import TechStack from './elements/TechStack.svelte';
 
   let {
     href,
     title,
     link,
-    date,
     stack,
     children = undefined
   }: {
@@ -20,27 +20,11 @@
   } = $props();
 </script>
 
-{#snippet card()}
-  <Card class="bg-zinc-900">
-    <h2 class="mb-2 text-2xl font-semibold">{title}</h2>
-    <div class="mb-4">
-      <a href="https://{link}" class="headline text-xl text-cyan-400">{link}</a>
-    </div>
-    <div class="mb-6 flex gap-2">
-      {#each stack as icon}
-        <img src="/tech-stack/{icon}.svg" class="h-6" alt="{icon} icon" />
-      {/each}
-    </div>
-    {@render children?.()}
-  </Card>
-{/snippet}
-
-<div class="max-w-2xl" {@attach scrollreveal()}>
-  {#if href}
-    <a {href}>
-      {@render card()}
-    </a>
-  {:else}
-    {@render card()}
-  {/if}
-</div>
+<Card class="max-w-2xl bg-zinc-100 dark:bg-zinc-900" {href} linkLabel="{title} project" {@attach scrollreveal()}>
+  <h2 class="mb-2 text-2xl font-semibold">{title}</h2>
+  <p class="mb-4">
+    <a href="https://{link}" class="headline relative z-2 text-xl text-cyan-500 dark:text-cyan-400">{link}</a>
+  </p>
+  <TechStack {stack} class="gap-2" />
+  {@render children?.()}
+</Card>

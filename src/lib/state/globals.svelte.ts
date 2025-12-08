@@ -1,4 +1,4 @@
-let seenLoadingScreen = $state(false);
+let seenLoadingScreen = $state(true);
 
 export const global = {
   get seenLoadingScreen() {

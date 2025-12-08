@@ -7,14 +7,12 @@
   import LoadingScreen from '$lib/components/animations/LoadingScreen.svelte';
 </script>
 
-<svelte:head>
-  <title>Mihran Mashhud</title>
-</svelte:head>
-
 <LoadingScreen>
-  <Hero />
-  <Work />
-  <Projects />
-  <Blog />
-  <Construction />
+  <article>
+    <Hero />
+    <Work />
+    <Projects />
+    <Blog />
+    <Construction />
+  </article>
 </LoadingScreen>
