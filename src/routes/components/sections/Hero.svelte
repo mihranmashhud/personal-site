@@ -2,6 +2,7 @@
   import { gsap } from 'gsap';
   import { onMount } from 'svelte';
   import LogoMarquee from '$lib/components/animations/LogoMarquee.svelte';
+  import ScrollDownArrow from '$lib/components/animations/ScrollDownArrow.svelte';
 
   let section: HTMLElement | null = $state(null);
   let title: HTMLElement | null = $state(null);
@@ -81,4 +82,5 @@
       Full Stack Developer
     </h2>
   </div>
+  <ScrollDownArrow class="absolute bottom-0 mb-20 w-4 md:w-6" delay="5s" />
 </section>
