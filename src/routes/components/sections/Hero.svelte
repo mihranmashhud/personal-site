@@ -73,7 +73,11 @@
       Mihran<br />
       Mashhud
     </h1>
-    <h2 bind:this={subtitle} class="p-2 text-xl font-bold tracking-tight md:text-3xl">
+    <h2
+      bind:this={subtitle}
+      class="headline-gradient p-2 text-xl font-bold tracking-tight md:text-3xl"
+      aria-label="Full Stack Developer"
+    >
       Full Stack Developer
     </h2>
   </div>
