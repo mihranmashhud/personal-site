@@ -8,11 +8,12 @@
   import { global } from '$lib/state/globals.svelte';
   import chroma from 'chroma-js';
   import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
+  import { spacing, vbar_height, vbar_width } from '../svgs/logo_consts';
 
-  const sp = 25;
-  const h = 70;
-  const w = 20;
-  const x = 10;
+  const sp = spacing;
+  const h = vbar_height;
+  const w = vbar_width;
+  const x = 20;
   const y = 20;
   const viewBox = {
     w: x * 2 + sp * 11 + w,
@@ -27,6 +28,11 @@
     children?: Snippet;
   } = $props();
 
+  let hidden = $state(true);
+  onMount(() => {
+    hidden = false;
+  });
+
   let complete = $state(!!(env.PUBLIC_SKIP_LOADING_SCREEN ?? false));
   let showSkip = $state(false);
   let gradient_colors: { color: string; offset: string }[] = $state([]);
@@ -38,7 +44,7 @@
     setCookie('showSkip', true);
     global.seenLoadingScreen = true;
     complete = true;
-    userOnComplete?.()
+    userOnComplete?.();
   }
 
   function handleSkip() {
@@ -156,14 +162,15 @@
         animate();
       });
     });
-    return () => ctx.revert()
+    return () => ctx.revert();
   }
 </script>
 
 {#if !global.seenLoadingScreen && !complete}
   <div
-    class="scroll flex h-screen w-screen flex-col items-center justify-center bg-zinc-900"
+    class="fixed z-100 flex h-screen w-screen flex-col items-center justify-center overflow-hidden"
     out:fade={{ duration: fade_duration }}
+    aria-label="Loading splash screen"
     {@attach attach}
   >
     <svg viewBox="0 0 {viewBox.w} {viewBox.h}" class="max-w-4xl drop-shadow-2xl drop-shadow-black">
@@ -200,12 +207,7 @@
           <stop stop-color={color} {offset} />
         {/each}
       </linearGradient>
-      <rect
-        class="mask-[url(#mask)]"
-        width="100%"
-        height="100%"
-        fill="url('#gradient')"
-      />
+      <rect class="mask-[url(#mask)]" width="100%" height="100%" fill="url('#gradient')" />
       <rect class="mask-[url(#mask)] fill-white opacity-50" width="100%" height="100%" />
     </svg>
     <button
@@ -216,10 +218,14 @@
     >
   </div>
 {:else}
-  <div in:fade={{ duration: fade_duration, delay: fade_duration }}>
+  <div
+    class:opacity-0={hidden}
+    class="noscript:opacity-100"
+    in:fade={{
+      duration: fade_duration,
+      delay: fade_duration
+    }}
+  >
     {@render children?.()}
   </div>
 {/if}
-
-<style>
-</style>

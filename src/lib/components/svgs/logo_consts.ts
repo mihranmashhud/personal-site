@@ -1,0 +1,11 @@
+export const spacing = 25;
+export const vbar_height = 70;
+export const hbar_height = 10;
+export const radius0 = 15;
+export const radius1 = 20;
+export const vbar_width = 20;
+export const hbar_width = spacing;
+export const slant = 0.15;
+export const x = slant * vbar_height;
+export const y = 0;
+export const path_count = 11;

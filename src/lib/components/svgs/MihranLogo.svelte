@@ -1,22 +1,17 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import MihranLogoPaths from "./MihranLogoPaths.svelte";
-  import { onMount } from "svelte";
+  import type { SVGAttributes } from 'svelte/elements';
+  import MihranLogoPaths from './MihranLogoPaths.svelte';
+  import { spacing, x, y, vbar_height, path_count, vbar_width } from './logo_consts';
 
-  let elem: SVGSVGElement | undefined = $state()
 
-  let {
-    ...rest
-  }: HTMLAttributes<SVGSVGElement> = $props()
-
-  onMount(() => {
-    if (elem) {
-      const bbox = elem.getBBox();
-      elem.setAttribute("viewBox", `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
-    }
-  });
+  let { ...rest }: SVGAttributes<any> = $props();
 </script>
 
-<svg id="logo-svg" class="logo-svg fill-stone-900" {...rest} bind:this={elem}>
-  <MihranLogoPaths vtarget="v" htarget="h"/>
+<svg
+  id="logo-svg"
+  viewBox="0 0 {x + spacing * path_count + vbar_width} {y * 2 + vbar_height}"
+  {...rest}
+  class={['logo-svg overflow-visible', rest?.class]}
+>
+  <MihranLogoPaths vtarget="v" htarget="h" />
 </svg>
