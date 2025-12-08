@@ -1,20 +1,55 @@
 @import 'tailwindcss';
-@import './styles/fonts/JetBrains.css';
 
-.headline, h1,h2,h3,h4,h5,h6 {
-  font-family: "JetBrains Mono", sans-serif;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: "JetBrains Mono", monospace;
 }
 
-.body,div,p,a {
-  font-family: "Libre Baskerville", serif;
-}
+@layer base {
 
-html {
-  scroll-behavior: smooth;
-}
+  .headline,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "JetBrains Mono", sans-serif;
+  }
 
-@media (prefers-reduced-motion: reduce) {
+  .body,
+  div,
+  p,
+  a {
+    font-family: "Libre Baskerville", serif;
+  }
+
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer utilities {
+  .headline-gradient {
+    --color-start: var(--color-violet-500);
+    --color-end: var(--color-blue-500);
+    background: linear-gradient(to right in oklab, var(--color-start), var(--color-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    .dark & {
+      background: linear-gradient(to right in oklab, var(--color-cyan-200), var(--color-orange-200));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
   }
 }
