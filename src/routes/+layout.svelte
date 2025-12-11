@@ -11,9 +11,6 @@
   import PageTransition from '$lib/components/wrappers/PageTransition.svelte';
   import Nav from '$lib/components/Nav.svelte';
   import { global } from '$lib/state/globals.svelte';
-  import { MetaTags } from 'svelte-meta-tags';
-  import { dev } from '$app/environment';
-  import { page } from '$app/state';
 
   let { children } = $props();
 
@@ -23,16 +20,6 @@
   });
 </script>
 
-<MetaTags
-  title="Mihran Mashhud" 
-  description="Just another one of them nerdy web developers." 
-  canonical="https://mihran.dev"
-  openGraph={{
-    images: [{
-      url: `http${dev ? '' : 's'}://${page.url.host}/images/simple.svg`
-    }],
-  }}
-/>
 
 <header>
   <a

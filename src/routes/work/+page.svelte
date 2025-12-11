@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { MetaTags } from 'svelte-meta-tags';
   import WorkSummary from './components/WorkSummary.svelte';
   import data from './data';
+  import MetaTags from '$lib/components/MetaTags.svelte';
 
-  const title = 'Work Log';
+  const title = 'Work Experience';
 </script>
 
 <MetaTags {title} />

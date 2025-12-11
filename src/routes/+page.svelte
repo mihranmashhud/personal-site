@@ -5,7 +5,10 @@
   import Projects from './components/sections/Projects.svelte';
   import Blog from './components/sections/Blog.svelte';
   import LoadingScreen from '$lib/components/animations/LoadingScreen.svelte';
+  import MetaTags from '$lib/components/MetaTags.svelte';
 </script>
+
+<MetaTags title="Mihran Mashhud" titleTemplate="%s" />
 
 <LoadingScreen>
   <article>
