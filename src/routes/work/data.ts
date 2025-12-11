@@ -9,7 +9,7 @@ export default {
   ensoconnect: {
     id: 'ensoconnect',
     company: 'EnsoConnect',
-    title: 'Backend Python Developer',
+    title: 'Backend Python Developer (Co-op)',
     start: '2023-09-13',
     end: '2023-12-22',
     stack: ['python', 'react', 'typescript', 'aws', 'bitbucket', 'jira']
@@ -17,7 +17,7 @@ export default {
   iqc: {
     id: 'iqc',
     company: 'Institute for Quantum Computing',
-    title: 'Quantum Cybersec Developer',
+    title: 'Quantum Cybersec Developer (Co-op)',
     start: '2022-09-01',
     end: '2022-12-22',
     stack: ['java', 'python', 'vue', 'github']
@@ -25,7 +25,7 @@ export default {
   opentext: {
     id: 'opentext',
     company: 'OpenText',
-    title: 'Full Stack Developer',
+    title: 'Full Stack Developer (Co-op)',
     start: '2022-01-01',
     end: '2022-04-28',
     stack: ['java', 'spring', 'react', 'vue', 'postgresql', 'bitbucket', 'jira']
@@ -33,7 +33,7 @@ export default {
   lynchpyn: {
     id: 'lynchpyn',
     company: 'LynchPyn',
-    title: 'Frontend React Developer',
+    title: 'Frontend React Developer (Co-op)',
     start: '2021-05-03',
     end: '2021-08-27',
     stack: ['typescript', 'react', 'materialui', 'rails', 'bitbucket']
@@ -41,7 +41,7 @@ export default {
   avanteio: {
     id: 'avante-io',
     company: 'Avante IO',
-    title: 'Backend Django Developer',
+    title: 'Backend Django Developer (Co-op)',
     start: '2020-09-12',
     end: '2020-12-23',
     stack: ['python', 'django', 'docker', 'postgresql', 'circleci', 'github']

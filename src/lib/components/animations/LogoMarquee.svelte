@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import MihranLogo from '$lib/components/svgs/MihranLogo.svelte';
   import { gsap } from 'gsap';
@@ -35,19 +34,23 @@
     mm.add('(prefers-reduced-motion: no-preference)', animate);
   });
 </script>
-  <div id="logo-marquee-container" class="-z-10" aria-hidden="true">
-    <div id="logo-rows">
-      {#each range(0, rows) as i}
-        <div class="flex logo-row-{i} w-[900vw] gap-1 py-1 md:w-[300vw]">
-          {#each Array(elems) as _}
-            <div class="flex-1">
-              <MihranLogo class="fill-zinc-200 dark:fill-zinc-900" viewBox="0 0 {spacing * path_count + vbar_width} {vbar_height}"/>
-            </div>
-          {/each}
-        </div>
-      {/each}
-    </div>
+
+<div id="logo-marquee-container" class="-z-10" aria-hidden="true">
+  <div id="logo-rows">
+    {#each range(0, rows) as i}
+      <div class="flex logo-row-{i} w-[900vw] py-1 md:w-[300vw]">
+        {#each Array(elems) as _}
+          <div class="flex-1">
+            <MihranLogo
+              class="overflow-visible fill-zinc-200 dark:fill-zinc-900"
+              viewBox="0 0 {spacing * (path_count + 1)} {vbar_height}"
+            />
+          </div>
+        {/each}
+      </div>
+    {/each}
   </div>
+</div>
 
 <style>
   #logo-marquee-container {

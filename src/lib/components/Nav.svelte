@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
   import MihranLogo from './svgs/MihranLogo.svelte';
   import { page } from '$app/state';
   import ThemeToggle from './inputs/ThemeToggle.svelte';
 
   let scrollY = $state(0);
-
-  let showNav = $derived(!(page.url.pathname === '/') || scrollY >= 20);
+  let mobileNavOpen = $state(false);
+  let showNav = $derived(!(page.url.pathname === '/') || scrollY >= 20 || mobileNavOpen);
 
   const links = [
     {
@@ -20,11 +19,11 @@
     {
       href: '/#contact',
       text: 'Contact'
-    },
-    {
-      href: '/blog',
-      text: 'Blog'
     }
+    // {
+    //   href: '/blog',
+    //   text: 'Blog'
+    // }
   ];
 </script>
 
@@ -32,8 +31,8 @@
 
 <nav
   class={[
-    'fixed top-0 right-0 left-0 z-100 flex justify-between bg-linear-to-b from-white p-4 transition-opacity duration-500 dark:from-zinc-950 dark:text-white noscript:opacity-100',
-    showNav || 'opacity-0'
+    'fixed top-0 right-0 left-0 z-100 flex justify-between bg-linear-to-b from-white p-4 transition-opacity duration-500 md:w-full dark:from-zinc-950 dark:text-white noscript:opacity-100',
+    showNav || 'opacity-20'
   ]}
 >
   <a class="" href="/">
@@ -42,7 +41,7 @@
   </a>
   <div class="hidden gap-5 font-bold md:flex">
     {#each links as { href, text }}
-      <a {href} class="headline transition-all hover:font-extrabold" data-sveltekit-noscroll>
+      <a {href} class="headline transition-all hover:font-extrabold">
         {text}
       </a>
     {/each}
@@ -53,6 +52,7 @@
     type="checkbox"
     id="mobile-nav-toggle"
     name="mobile-nav-toggle"
+    bind:checked={mobileNavOpen}
   />
   <label
     class="relative z-101 flex cursor-pointer items-baseline justify-end p-2 select-none md:hidden"

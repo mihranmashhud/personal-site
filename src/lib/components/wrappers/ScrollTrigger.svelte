@@ -17,6 +17,6 @@
   let { children } = $props();
 </script>
 
-<div id="scroll-content" bind:clientHeight={height}>
+<div id="scroll-content" class="scroll-content" bind:clientHeight={height}>
   {@render children()}
 </div>

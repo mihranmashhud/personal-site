@@ -17,12 +17,12 @@
 <article
   {...rest}
   class={[
-    'transition-outline relative p-4 shadow-lg shadow-zinc-300 dark:shadow-zinc-800 outline-1 outline-stone-200 dark:outline-stone-800 transition-shadow hover:shadow-xl hover:outline-stone-300 hover:dark:outline-stone-700',
+    'transition-outline relative p-4 shadow-lg shadow-zinc-300 outline-1 outline-stone-200 transition-shadow hover:shadow-xl hover:outline-stone-300 dark:shadow-zinc-800 dark:outline-stone-800 hover:dark:outline-stone-700',
     rest?.class
   ]}
 >
   {#if 'href' in rest}
-    <a class="card-action" href={rest.href} data-sveltekit-noscroll>
+    <a class="card-action" href={rest.href}>
       <span class="sr-only">{rest.linkLabel}</span>
     </a>
   {/if}

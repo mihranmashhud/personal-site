@@ -1,12 +1,21 @@
-<script>
-  import { page } from '$app/state';
-  import { fade } from 'svelte/transition';
+<script lang="ts">
+  import { onNavigate } from '$app/navigation';
 
-  let { children } = $props();
+  // View transitions
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
-{#key page.url.pathname}
-  <div in:fade={{ duration: 250, delay: 260 }} out:fade={{ duration: 250 }}>
-    {@render children()}
-  </div>
-{/key}
+<style>
+  :global(header > nav) {
+    view-transition-name: nav;
+  }
+</style>

@@ -57,6 +57,11 @@
       scroll-behavior: auto;
     }
   }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 500ms;
+  }
 }
 
 @layer utilities {
@@ -69,10 +74,13 @@
     color: transparent;
 
     .dark & {
-      background: linear-gradient(to right in oklab, var(--color-cyan-200), var(--color-orange-200));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      --color-start: var(--color-cyan-200);
+      --color-end: var(--color-violet-200);
+    }
+
+    @media (scripting: none) and (prefers-color-scheme: dark) {
+      --color-start: var(--color-cyan-200);
+      --color-end: var(--color-violet-200);
     }
   }
 }

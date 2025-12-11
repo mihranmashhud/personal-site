@@ -18,9 +18,9 @@
 --duration: {duration};"
 >
   <svg viewBox="0 0 50 50">
-    <polyline points="0,25 25,50 50,25" />
-    <polyline points="0,25 25,50 50,25" />
-    <polyline points="0,25 25,50 50,25" />
+    <polyline points="0,25 25,50 50,25" class="stroke-black dark:stroke-white" />
+    <polyline points="0,25 25,50 50,25" class="stroke-black dark:stroke-white"/>
+    <polyline points="0,25 25,50 50,25" class="stroke-black dark:stroke-white"/>
   </svg>
 </div>
 
@@ -58,11 +58,7 @@
   }
   polyline {
     fill: none;
-    stroke: black;
     stroke-width: 4;
-    .dark & {
-      stroke: white;
-    }
   }
   @media (prefers-reduced-motion: no-preference) {
     polyline {

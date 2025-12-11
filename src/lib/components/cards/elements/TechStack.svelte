@@ -41,6 +41,7 @@
     express: true,
     github: true,
     circleci: true,
+    aws: true,
   }
 </script>
 
@@ -49,10 +50,10 @@
     <li>
       <img
         src="/tech-stack/{icon}.svg"
-        class={['h-6 drop-shadow-sm drop-shadow-black/40 dark:drop-shadow-white/40', 
-          icon in invert && "not-dark:invert",
+        class={['h-5 md:h-6 drop-shadow-sm drop-shadow-black/40 dark:drop-shadow-white/40', 
+          icon in invert && "light:invert",
           img_class]}
-        alt="{icon} 'icon'"
+        alt=""
         title={tooltip_labels[icon]}
         aria-hidden="true"
       />

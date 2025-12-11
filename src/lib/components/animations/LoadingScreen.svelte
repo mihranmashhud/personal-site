@@ -64,10 +64,10 @@
 
     tl = gsap.timeline({
       repeat: 1,
-      repeatDelay: 1,
+      repeatDelay: 0.8,
       yoyo: true,
       defaults: {
-        duration: 0.35
+        duration: 0.25
       },
       onComplete
     });
@@ -93,7 +93,7 @@
         'roundCorners'
       );
     }
-    tl.addLabel('addBars');
+    tl.addLabel('addBars', 'roundCorners');
     for (let i = 0; i < lh0.length; i++) {
       tl.set(
         lh0[i],
@@ -140,9 +140,13 @@
   }
 
   function attach() {
+    const theme = localStorage.getItem('theme');
+    let use_dark =
+      theme === 'dark' ||
+      (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)')?.matches);
     const styles = getComputedStyle(document.documentElement);
-    const from = styles.getPropertyValue('--color-cyan-400');
-    const to = styles.getPropertyValue('--color-orange-400');
+    const from = styles.getPropertyValue(use_dark ? '--color-cyan-200' : '--color-violet-500');
+    const to = styles.getPropertyValue(use_dark ? '--color-violet-200' : '--color-blue-500');
     gradient_colors = [...generateGradientColors(from, to)];
 
     let ctx = gsap.context(() => {
@@ -168,12 +172,15 @@
 
 {#if !global.seenLoadingScreen && !complete}
   <div
-    class="fixed z-100 flex h-screen w-screen flex-col items-center justify-center overflow-hidden"
+    class="fixed z-200 flex h-screen w-screen flex-col items-center justify-center overflow-hidden"
     out:fade={{ duration: fade_duration }}
     aria-label="Loading splash screen"
     {@attach attach}
   >
-    <svg viewBox="0 0 {viewBox.w} {viewBox.h}" class="max-w-4xl drop-shadow-2xl drop-shadow-black">
+    <svg
+      viewBox="0 0 {viewBox.w} {viewBox.h}"
+      class="max-w-4xl drop-shadow-2xl drop-shadow-black/20 dark:drop-shadow-white/20"
+    >
       <defs>
         <mask id="mask" class="fill-white">
           <MihranLogoPaths

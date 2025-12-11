@@ -4,7 +4,6 @@
   let { ...rest } = $props();
 
   const choices = ['system', 'light', 'dark'] as const;
-  const icons = ['star', 'sun', 'moon'] as const;
 
   type Choices = (typeof choices)[number];
 

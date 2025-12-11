@@ -17,14 +17,8 @@
   </h1>
 
   <WorkSummary {...data.i3institute}>
-    {#snippet logo(id, send, receive)}
-      <img
-        src="/logos/i3-white.svg"
-        alt="i3 Institute Logo"
-        class="h-16 not-dark:invert"
-        out:send={{ key: id + '-logo' }}
-        in:receive={{ key: id + '-logo' }}
-      />
+    {#snippet logo()}
+      <img src="/logos/i3-white.svg" alt="i3 Institute Logo" class="h-16 light:invert" />
     {/snippet}
     <!-- TODO: Replace below -->
     <p>
@@ -35,63 +29,39 @@
   </WorkSummary>
 
   <WorkSummary {...data.ensoconnect}>
-    {#snippet logo(id, send, receive)}
-      <img
-        src="/logos/ensoconnect.svg"
-        alt="EnsoConnect Logo"
-        class="h-12 not-dark:invert"
-        out:send={{ key: id + '-logo' }}
-        in:receive={{ key: id + '-logo' }}
-      />
+    {#snippet logo()}
+      <img src="/logos/ensoconnect.svg" alt="EnsoConnect Logo" class="h-12 light:invert" />
     {/snippet}
   </WorkSummary>
 
   <WorkSummary {...data.iqc}>
-    {#snippet logo(id, send, receive)}
-      <img
-        src="/logos/uwaterloo.png"
-        alt="University of Waterloo Logo"
-        class="h-20 not-dark:invert"
-        out:send={{ key: id + '-logo' }}
-        in:receive={{ key: id + '-logo' }}
-      />
+    {#snippet logo()}
+      <div class="-mr-7 -mt-4">
+        <img
+          src="/logos/uwaterloo.png"
+          alt="University of Waterloo Logo"
+          class="h-20 light:invert"
+        />
+      </div>
     {/snippet}
   </WorkSummary>
 
   <WorkSummary {...data.opentext}>
-    {#snippet logo(id, send, receive)}
-      <img
-        src="/logos/opentext.svg"
-        alt="OpenText Logo"
-        class="h-8 not-dark:invert"
-        out:send={{ key: id + '-logo' }}
-        in:receive={{ key: id + '-logo' }}
-      />
+    {#snippet logo()}
+      <img src="/logos/opentext.svg" alt="OpenText Logo" class="h-8 light:invert" />
     {/snippet}
   </WorkSummary>
 
   <WorkSummary {...data.lynchpyn}>
-    {#snippet logo(id, send, receive)}
-      <img
-        src="/logos/lynchpyn-white.webp"
-        alt="LynchPyn Logo"
-        class="h-16 not-dark:invert"
-        out:send={{ key: id + '-logo' }}
-        in:receive={{ key: id + '-logo' }}
-      />
+    {#snippet logo()}
+      <img src="/logos/lynchpyn-white.webp" alt="LynchPyn Logo" class="h-16 light:invert" />
     {/snippet}
   </WorkSummary>
 
   <WorkSummary {...data.avanteio}>
-    {#snippet logo(id, send, receive)}
+    {#snippet logo()}
       <div class="flex items-center gap-4 text-3xl">
-        <img
-          src="/logos/avante-io.svg"
-          alt="Avante IO Logo"
-          class="h-12 not-dark:invert"
-          out:send={{ key: id + '-logo' }}
-          in:receive={{ key: id + '-logo' }}
-        />
+        <img src="/logos/avante-io.svg" alt="Avante IO Logo" class="h-12 light:invert" />
         <div class="headline font-medium">Avante IO</div>
       </div>
     {/snippet}
