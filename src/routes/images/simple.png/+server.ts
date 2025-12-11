@@ -3,8 +3,6 @@ import JustLogo from '$lib/components/og/JustLogo.svelte';
 import { ImageResponse } from '@ethercorps/sveltekit-og';
 import { GoogleFont, resolveFonts } from '@ethercorps/sveltekit-og/fonts';
 
-export const prerender = true;
-
 const jetbrainsMono = {
   regular: new GoogleFont('JetBrains Mono', {
     weight: 400,
