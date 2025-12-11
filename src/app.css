@@ -4,6 +4,7 @@
 
 @theme {
   --font-mono: "JetBrains Mono", monospace;
+  --font-body: "Poppins", sans-serif;
 }
 
 @layer base {
@@ -15,14 +16,14 @@
   h4,
   h5,
   h6 {
-    font-family: "JetBrains Mono", sans-serif;
+    font-family: var(--font-mono);
   }
 
   .body,
   div,
   p,
   a {
-    font-family: "Libre Baskerville", serif;
+    font-family: var(--font-body);
   }
 
   html {
