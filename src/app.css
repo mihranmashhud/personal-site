@@ -1,6 +1,28 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark {
+  @media (scripting: enabled) or (scripting: initial-only) {
+    &:where(.dark, .dark *) {
+      @slot;
+    }
+  }
+
+  @media (scripting: none) and (prefers-color-scheme: dark) {
+    @slot;
+  }
+}
+
+@custom-variant light {
+  @media (scripting: enabled) or (scripting: initial-only) {
+    &:not(.dark, .dark *) {
+      @slot;
+    }
+  }
+
+  @media (scripting: none) and (prefers-color-scheme: light) {
+    @slot;
+  }
+}
 
 @theme {
   --font-mono: "JetBrains Mono", monospace;

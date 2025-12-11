@@ -2,6 +2,7 @@
   import WorkSummary from './components/WorkSummary.svelte';
   import data from './data';
   import MetaTags from '$lib/components/MetaTags.svelte';
+  import { scramblereveal } from '$lib/animate/attachments.svelte';
 
   const title = 'Work Experience';
 </script>
@@ -9,7 +10,9 @@
 <MetaTags {title} />
 
 <article class="mx-auto max-w-4xl space-y-6 p-5">
-  <h1 class="headline-gradient mx-auto mt-10 w-fit text-center text-3xl font-bold">
+  <h1 class="headline-gradient mx-auto mt-10 w-fit text-center text-4xl font-bold"
+    {@attach scramblereveal()}
+  >
     {title}
   </h1>
 

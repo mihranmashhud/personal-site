@@ -1,10 +1,11 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import type { Attachment } from 'svelte/attachments';
 
 export function scrollreveal(override_vars: GSAPTweenVars = {}): Attachment {
   return (element) => {
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
 
     const defaults: GSAPTweenVars = {
       scrollTrigger: {
@@ -14,7 +15,31 @@ export function scrollreveal(override_vars: GSAPTweenVars = {}): Attachment {
       },
       opacity: 0,
       translateY: 10,
-      duration: 0.35,
+      duration: 0.35
+    };
+    const vars = Object.assign(defaults, override_vars);
+
+    let ctx = gsap.context(() => {
+      gsap.from(element, vars);
+    });
+    return () => ctx.revert();
+  };
+}
+
+export function scramblereveal(override_vars: GSAPTweenVars = {}): Attachment {
+  return (element) => {
+    gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
+
+    const defaults: GSAPTweenVars = {
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      scrambleText: {
+        text: '',
+        chars: "upperAndLowerCase"
+      }
     };
     const vars = Object.assign(defaults, override_vars);
 
