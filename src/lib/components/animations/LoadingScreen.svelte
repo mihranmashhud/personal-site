@@ -9,6 +9,7 @@
   import chroma from 'chroma-js';
   import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
   import { spacing, vbar_height, vbar_width } from '../svgs/logo_consts';
+  import { page } from '$app/state';
 
   const sp = spacing;
   const h = vbar_height;
@@ -33,7 +34,7 @@
     hidden = false;
   });
 
-  let complete = $state(!!(env.PUBLIC_SKIP_LOADING_SCREEN ?? false));
+  let complete = $state(!!(env.PUBLIC_SKIP_LOADING_SCREEN ?? !(page.url.pathname === "/")));
   let showSkip = $state(false);
   let gradient_colors: { color: string; offset: string }[] = $state([]);
 
@@ -172,8 +173,8 @@
 
 {#if !global.seenLoadingScreen && !complete}
   <div
-    class="fixed z-200 flex h-screen w-screen flex-col items-center justify-center overflow-hidden"
-    out:fade={{ duration: fade_duration }}
+    class="fixed z-200 flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-zinc-50 dark:bg-zinc-950"
+    transition:fade={{ duration: fade_duration }}
     aria-label="Loading splash screen"
     {@attach attach}
   >

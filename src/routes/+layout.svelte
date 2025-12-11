@@ -12,6 +12,7 @@
   import Nav from '$lib/components/Nav.svelte';
   import { global } from '$lib/state/globals.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import LoadingScreen from '$lib/components/animations/LoadingScreen.svelte';
 
   let { children } = $props();
 
@@ -19,7 +20,6 @@
     global.seenLoadingScreen = false;
     gsap.registerPlugin(Flip, TextPlugin, ScrambleTextPlugin);
   });
-
 </script>
 
 <PageTransition />
@@ -34,8 +34,10 @@
 </header>
 
 <ScrollTrigger>
-  <main class="scroll-mt-10 overflow-x-hidden dark:text-white" id="main-content">
-    {@render children()}
-  </main>
-  <Footer />
+  <LoadingScreen>
+    <main class="scroll-mt-10 overflow-x-hidden dark:text-white" id="main-content">
+      {@render children()}
+    </main>
+    <Footer />
+  </LoadingScreen>
 </ScrollTrigger>
