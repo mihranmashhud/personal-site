@@ -4,7 +4,6 @@
   import { scrollreveal } from '$lib/animate/attachments.svelte';
   import dayjs from 'dayjs';
   import TechStack from './elements/TechStack.svelte';
-  import { crossfade, type CrossfadeTransitionFunction } from '$lib/animate/transitions.svelte';
 
   let {
     id,
@@ -20,19 +19,17 @@
     id: string;
     href: string;
     company: string;
-    logo: Snippet<[string, CrossfadeTransitionFunction, CrossfadeTransitionFunction]>;
+    logo: Snippet;
     title: string;
-    start?: string;
+    start: string;
     end?: string;
     stack: string[];
     children?: Snippet;
   } = $props();
 
   const format_str = 'MMM. YYYY';
-  const start_date = start ? dayjs(start).format(format_str) : 'Present';
+  const start_date = dayjs(start).format(format_str)
   const end_date = end ? dayjs(end).format(format_str) : 'Present';
-
-  const [send, receive] = crossfade;
 </script>
 
 <Card
@@ -42,13 +39,13 @@
   linkLabel="{company} work experience"
   {@attach scrollreveal()}
 >
-  {@render logo(id, send, receive)}
+  {@render logo()}
   <hr class="my-4 h-0.25 border-t-0 bg-zinc-200 dark:bg-zinc-800" />
   <hgroup>
     <h2 class="headline-gradient text-2xl font-bold">
       {title} <span class="sr-only">@ {company}</span>
     </h2>
-    <p class="headline mb-4 text-xl opacity-80">
+    <p class="headline mb-4 text-xl font-light">
       <time datetime={dayjs(start).format('YYYY-MM-DD')}>{start_date}</time>
       <span aria-label="to">→</span>
       <time datetime={dayjs(end).format('YYYY-MM-DD')}>{end_date}</time>
