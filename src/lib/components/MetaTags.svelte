@@ -21,4 +21,7 @@
       url: `http${dev ? '' : 's'}://${page.url.host}${ogImage}`
     }],
   }}
+  twitter={{
+    cardType: 'summary_large_image',
+  }}
 />
