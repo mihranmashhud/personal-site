@@ -28,7 +28,7 @@
   const end_date = end ? dayjs(end).format(format_str) : 'Present';
 </script>
 
-<section {id} class="mb-20 md:mb-24">
+<section {id} class="mb-20 md:mb-24 space-y-4">
   <div class="mb-8 flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
     <div class="mx-auto md:hidden">{@render logo()}</div>
     <div class="space-y-4">

@@ -2,10 +2,15 @@
   import MihranLogo from './svgs/MihranLogo.svelte';
   import { page } from '$app/state';
   import ThemeToggle from './inputs/ThemeToggle.svelte';
+  import { onMount } from 'svelte';
 
   let scrollY = $state(0);
   let mobileNavOpen = $state(false);
   let showNav = $derived(!(page.url.pathname === '/') || scrollY >= 20 || mobileNavOpen);
+
+  onMount(() => {
+    mobileNavOpen = false;
+  })
 
   const links = [
     {

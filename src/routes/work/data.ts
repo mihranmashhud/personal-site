@@ -1,4 +1,11 @@
 export default {
+  getgambit: {
+    id: 'get-gambit',
+    company: 'Get Gambit',
+    title: 'Jr Full Stack Developer',
+    start: '2026-01-14',
+    stack: ['typescript', 'nextjs', 'react', 'github', 'aws', 'supabase', 'linear']
+  },
   i3institute: {
     id: 'i3-institute',
     company: 'i3 Institute',

@@ -28,7 +28,7 @@
       <p>
         <a {href}>
           <i class="ri-{icon}"></i>
-          {name}: <span class="headline-gradient">{text}</span>
+          {name}: <br class="md:hidden"><span class="headline-gradient">{text}</span>
           <i class="ri-external-link-line"></i>
         </a>
       </p>

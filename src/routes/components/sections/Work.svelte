@@ -6,6 +6,13 @@
 <section id="work-experience" class="bg-zinc-100 p-4 py-20 dark:bg-zinc-900">
   <h1 class="headline-gradient mx-auto mb-12 w-fit text-4xl font-bold">Work Experience</h1>
   <div class="mx-auto flex max-w-4xl flex-col gap-6 md:grid md:grid-cols-2">
+    <WorkSummaryCard href="/work#{data.getgambit.id}" {...data.getgambit}>
+      {#snippet logo()}
+        <div class="flex h-20 items-center gap-4 text-3xl">
+        </div>
+      {/snippet}
+    </WorkSummaryCard>
+
     <WorkSummaryCard href="/work#{data.i3institute.id}" {...data.i3institute}>
       {#snippet logo()}
         <div class="flex h-20 items-center gap-4 text-3xl">

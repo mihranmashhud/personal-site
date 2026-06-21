@@ -25,7 +25,7 @@
 }
 
 @theme {
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono Variable", monospace;
   --font-body: "Poppins", sans-serif;
 }
 

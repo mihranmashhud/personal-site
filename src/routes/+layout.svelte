@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '@fontsource-variable/jetbrains-mono';
   import '../app.css';
   import { gsap } from 'gsap';
   import { Flip } from 'gsap/Flip';
