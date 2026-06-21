@@ -4,12 +4,12 @@
   import ThemeToggle from './inputs/ThemeToggle.svelte';
   import { onMount } from 'svelte';
 
-  let scrollY = $state(0);
-  let mobileNavOpen = $state(false);
-  let showNav = $derived(!(page.url.pathname === '/') || scrollY >= 20 || mobileNavOpen);
+  let scroll_y = $state(0);
+  let mobile_nav_open = $state(false);
+  let show_nav = $derived(!(page.url.pathname === '/') || scroll_y >= 20 || mobile_nav_open);
 
   onMount(() => {
-    mobileNavOpen = false;
+    mobile_nav_open = false;
   })
 
   const links = [
@@ -32,12 +32,12 @@
   ];
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:scrollY={scroll_y} />
 
 <nav
   class={[
     'fixed top-0 right-0 left-0 z-100 flex justify-between bg-linear-to-b from-white p-4 transition-opacity duration-500 md:w-full dark:from-zinc-950 dark:text-white noscript:opacity-100',
-    showNav || 'opacity-20'
+    show_nav || 'opacity-20'
   ]}
 >
   <a class="" href="/">
@@ -57,7 +57,7 @@
     type="checkbox"
     id="mobile-nav-toggle"
     name="mobile-nav-toggle"
-    bind:checked={mobileNavOpen}
+    bind:checked={mobile_nav_open}
   />
   <label
     class="relative z-101 flex cursor-pointer items-baseline justify-end p-2 select-none md:hidden"
