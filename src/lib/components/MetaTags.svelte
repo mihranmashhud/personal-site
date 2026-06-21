@@ -1,27 +1,28 @@
 <script lang="ts">
-  import { dev } from '$app/environment';
-  import { page } from '$app/state';
   import { MetaTags } from 'svelte-meta-tags';
+  import { PUBLIC_SITE_URL } from '$env/static/public';
 
   let {
     title,
-    description = "Just another one of them nerdy web developers.",
-    titleTemplate = "%s • Mihran Mashhud",
-    ogImage = "/images/simple.png",
-  } = $props()
+    description = 'Just another one of them nerdy web developers.',
+    titleTemplate = '%s • Mihran Mashhud',
+    ogImage = '/images/simple.png'
+  } = $props();
 </script>
 
 <MetaTags
   {title}
   {titleTemplate}
   {description}
-  canonical="https://mihran.dev"
+  canonical={PUBLIC_SITE_URL}
   openGraph={{
-    images: [{
-      url: `http${dev ? '' : 's'}://${page.url.host}${ogImage}`
-    }],
+    images: [
+      {
+        url: `${PUBLIC_SITE_URL}/${ogImage}`
+      }
+    ]
   }}
   twitter={{
-    cardType: 'summary_large_image',
+    cardType: 'summary_large_image'
   }}
 />
