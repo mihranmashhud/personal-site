@@ -9,6 +9,7 @@
     <WorkSummaryCard href="/work#{data.getgambit.id}" {...data.getgambit}>
       {#snippet logo()}
         <div class="flex h-20 items-center gap-4 text-3xl">
+          <img src="/logos/get-gambit.svg" alt="Get Gambit Logo" class="h-16 light:invert" />
         </div>
       {/snippet}
     </WorkSummaryCard>

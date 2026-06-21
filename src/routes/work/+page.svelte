@@ -18,7 +18,9 @@
   </h1>
 
   <WorkSummary {...data.getgambit}>
-    {#snippet logo()}{/snippet}
+    {#snippet logo()}
+      <img src="/logos/get-gambit.svg" alt="Get Gambit Logo" class="light:invert h-12" />
+    {/snippet}
     <p><em>Work in progress... (literally!)</em></p>
   </WorkSummary>
 
