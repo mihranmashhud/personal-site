@@ -47,7 +47,7 @@
       Stripe at this point, I quickly found that using it for doing two separate payment schemes was
       rather difficult. Especially since the monthly scheme was not a subscription but a monthly
       installment payment. Honestly, my first crack at it was less than stellar. But I reworked the
-      whole payment process later on and worked rock steady ever since.
+      whole payment process later on and it has worked rock steady ever since.
     </p>
   </WorkSummary>
 

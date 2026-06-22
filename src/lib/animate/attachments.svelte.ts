@@ -38,7 +38,7 @@ export function scramblereveal(override_vars: GSAPTweenVars = {}): Attachment {
       },
       scrambleText: {
         text: '',
-        chars: "upperAndLowerCase"
+        chars: 'upperAndLowerCase'
       }
     };
     const vars = Object.assign(defaults, override_vars);

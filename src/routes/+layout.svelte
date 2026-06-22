@@ -36,7 +36,7 @@
 
 <ScrollTrigger>
   <LoadingScreen>
-    <main class="scroll-mt-10 overflow-x-hidden dark:text-white" id="main-content">
+    <main class="scroll-mt-14 overflow-x-hidden dark:text-white" id="main-content">
       {@render children()}
     </main>
     <Footer />

@@ -11,6 +11,7 @@ export default {
     company: 'i3 Institute',
     title: 'Lead Web Developer',
     start: '2024-01-01',
+    end: '2026-01-14',
     stack: ['typescript', 'express', 'nextjs', 'react', 'svelte', 'github', 'cloudflare']
   },
   ensoconnect: {

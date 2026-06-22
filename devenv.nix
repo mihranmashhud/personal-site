@@ -21,4 +21,5 @@
         pnpm run dev $@
       '';
   };
+  dotenv.enable = true;
 }

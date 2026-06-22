@@ -3,14 +3,29 @@
   import { page } from '$app/state';
   import ThemeToggle from './inputs/ThemeToggle.svelte';
   import { onMount } from 'svelte';
+  import { onNavigate } from '$app/navigation';
 
   let scroll_y = $state(0);
   let mobile_nav_open = $state(false);
   let show_nav = $derived(!(page.url.pathname === '/') || scroll_y >= 20 || mobile_nav_open);
 
-  onMount(() => {
+  function closeMobileNav() {
     mobile_nav_open = false;
-  })
+  }
+
+  onMount(() => {
+    closeMobileNav();
+  });
+
+  onNavigate((navigation) => {
+    closeMobileNav();
+    if (navigation.from != navigation.to) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+      });
+    }
+  });
 
   const links = [
     {
@@ -36,14 +51,19 @@
 
 <nav
   class={[
-    'fixed top-0 right-0 left-0 z-100 flex justify-between bg-linear-to-b from-white p-4 transition-opacity duration-500 md:w-full dark:from-zinc-950 dark:text-white noscript:opacity-100',
+    'fixed top-0 right-0 left-0 z-100 flex justify-between p-4 transition-opacity duration-500 md:w-full dark:text-white noscript:opacity-100',
     show_nav || 'opacity-20'
   ]}
 >
+  <div
+    class="pointer-events-none absolute inset-0 -z-1 h-[150%] bg-linear-to-b from-white via-white/70 dark:via-zinc-950/70 via-50% dark:from-zinc-950"
+  ></div>
+
   <a class="" href="/">
     <span class="sr-only">Home</span>
     <MihranLogo class="h-5 fill-stone-950 dark:fill-stone-200" />
   </a>
+  <!-- Desktop Nav -->
   <div class="hidden gap-5 font-bold md:flex">
     {#each links as { href, text }}
       <a {href} class="headline transition-all hover:font-extrabold">
@@ -52,6 +72,7 @@
     {/each}
     <ThemeToggle />
   </div>
+  <!-- Mobile Nav -->
   <input
     class="appearance-none md:hidden"
     type="checkbox"
@@ -75,7 +96,7 @@
     <div class="absolute right-0 bottom-0 left-0 mb-10 flex flex-col gap-5 p-5 text-2xl font-bold">
       <ThemeToggle class="absolute right-0 bottom-0 mx-5 w-10 text-xl" />
       {#each links as { href, text }}
-        <a {href} class="headline" data-sveltekit-noscroll>
+        <a {href} class="headline" data-sveltekit-noscroll onclick={closeMobileNav}>
           {text}
         </a>
       {/each}
